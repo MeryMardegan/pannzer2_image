@@ -54,7 +54,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: . # diretório onde está o Dockerfile
-          file: ./Dockerfile # caminho do Dockerfile
+          file: ./pannzer2/Dockerfile # caminho do Dockerfile
           push: true # faz push da imagem para o registry
           platforms: linux/amd64 # build para arquitetura amd64
           tags: ${{ steps.meta.outputs.tags }} # tags geradas
@@ -63,3 +63,4 @@ jobs:
           cache-to: type=gha,mode=max # salva cache para próximos builds
 
           provenance: false # desliga SBOM
+
