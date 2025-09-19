@@ -1,0 +1,8 @@
+.git
+data/
+results/
+*.fastq
+*.fna
+*.faa
+*.sif
+__pycache__/
