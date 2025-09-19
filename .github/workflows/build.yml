@@ -27,7 +27,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: | 
-          ghcr.io/${{ github.repository_owner }}/pannzer2 # nome base da imagem
+            ghcr.io/${{ github.repository_owner }}/pannzer2 # nome base da imagem
           tags: |
             type=raw,value=latest,enable={{is_default_branch}} # tag latest na branch default
             type=ref,event=tag # gera tag = nome da tag do git
@@ -61,4 +61,5 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }} # labels geradas
           cache-from: type=gha # usa cache do github actions
           cache-to: type=gha,mode=max # salva cache para próximos builds
+
           provenance: false # desliga SBOM
