@@ -20,7 +20,7 @@ RUN curl -fsSL http://ekhidna2.biocenter.helsinki.fi/sanspanz/SANSPANZ.3.tar.gz 
  && rm SANSPANZ.3.tar.gz
 
 # Dependências Python do repo
-COPY requirements.txt /opt/SANSPANZ.3/requirements.txt
+COPY panzzer2/requirements.txt /opt/SANSPANZ.3/requirements.txt
 RUN pip3 install --no-cache-dir -r /opt/SANSPANZ.3/requirements.txt || true
 
 # Atalhos no PATH (apontando para SANSPANZ.3)
@@ -35,4 +35,5 @@ WORKDIR /data
 
 # ENTRYPOINT para travar no cliente:
 ENTRYPOINT ["runsanspanz.py"]
+
 
